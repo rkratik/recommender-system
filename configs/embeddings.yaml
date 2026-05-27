@@ -1,0 +1,30 @@
+# Embedding Model Configuration
+model:
+  name: sentence-transformers/all-MiniLM-L6-v2
+  pooling: mean
+  normalize: true
+
+training:
+  epochs: 10
+  batch_size: 32
+  learning_rate: 2e-5
+  warmup_steps: 1000
+  max_grad_norm: 1.0
+  device: cuda
+
+data:
+  train_path: data/train.csv
+  val_path: data/val.csv
+  test_path: data/test.csv
+  text_column: text
+  label_column: label
+
+output:
+  model_dir: models/embeddings
+  save_every: 1  # epochs
+  
+evaluation:
+  evaluate_every: 1  # epochs
+  metrics:
+    - cosine_accuracy
+    - mean_average_precision

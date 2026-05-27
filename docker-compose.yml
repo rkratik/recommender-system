@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: recommender-api
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
+      - DEBUG=False
+      - DEVICE=cuda
+      - DATABASE_URL=postgresql://recommender:password@db:5432/recommender_db
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      - db
+    networks:
+      - recommender-network
+    restart: unless-stopped
+
+  db:
+    image: postgres:16
+    container_name: recommender-db
+    environment:
+      - POSTGRES_USER=recommender
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=recommender_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - recommender-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  recommender-network:
+    driver: bridge

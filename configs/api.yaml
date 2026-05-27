@@ -1,0 +1,36 @@
+# API Configuration
+server:
+  host: 0.0.0.0
+  port: 8000
+  workers: 4
+  reload: false
+  log_level: info
+
+model:
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  embedding_model_gpu: sentence-transformers/all-mpnet-base-v2
+  device: cuda
+  dtype: float32
+
+inference:
+  batch_size: 32
+  top_k: 100
+  top_k_initial: 200
+  diversity_factor: 0.5
+  use_cache: true
+
+cache:
+  enabled: true
+  ttl: 3600  # 1 hour
+  max_size: 10000
+
+logging:
+  level: INFO
+  file: logs/api.log
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  max_bytes: 104857600  # 100MB
+  backup_count: 5
+
+database:
+  use_postgres: false
+  url: postgresql://user:password@localhost:5432/recommender_db
