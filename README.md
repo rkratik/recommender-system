@@ -2,7 +2,7 @@
 
 A production-ready, AI-driven movie recommendation system leveraging PyTorch, transformers, and large language models for intelligent semantic understanding of user preferences.
 
-## 🎯 Features
+##  Features
 
 - **LLM-Based Embeddings**: Uses transformer models to understand semantic meaning of movie plots, reviews, and user preferences
 - **Multi-Modal Learning**: Combines textual features with metadata (genres, ratings, cast)
@@ -12,7 +12,7 @@ A production-ready, AI-driven movie recommendation system leveraging PyTorch, tr
 - **Evaluation Metrics**: NDCG, Recall@K, Precision@K, and diversity metrics
 - **Fine-tuning Capabilities**: Custom model training on your domain data
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Architecture](#architecture)
 - [Installation](#installation)
@@ -25,7 +25,7 @@ A production-ready, AI-driven movie recommendation system leveraging PyTorch, tr
 - [Contributing](#contributing)
 - [License](#license)
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 User Input (Preferences/History)
@@ -49,7 +49,7 @@ Recommendation Output
 4. **Filtering**: Applies business logic, diversity constraints, and personalization
 5. **API Server**: FastAPI-based REST interface for serving recommendations
 
-## 💻 Installation
+##  Installation
 
 ### Prerequisites
 
@@ -76,7 +76,7 @@ cp .env.example .env
 # Edit .env with your settings
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Download Sample Data
 
@@ -114,7 +114,7 @@ curl -X POST "http://localhost:8000/recommend" \
   }'
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 recommender-system/
@@ -162,7 +162,7 @@ recommender-system/
 └── README.md
 ```
 
-## 🧠 Model Details
+##  Model Details
 
 ### Embedding Model
 
@@ -176,7 +176,7 @@ recommender-system/
 - **Loss**: Contrastive loss with in-batch negatives
 - **Optimization**: AdamW with warmup
 
-## 📚 API Documentation
+##  API Documentation
 
 ### POST `/recommend`
 
@@ -217,7 +217,7 @@ Get personalized movie recommendations.
 
 Health check endpoint.
 
-## 🎓 Training
+##  Training
 
 ### Train from Scratch
 
@@ -238,7 +238,7 @@ python train/train_embeddings.py \
   --data-path data/movies.csv
 ```
 
-## 📊 Evaluation
+##  Evaluation
 
 ### Run Benchmark
 
@@ -258,7 +258,7 @@ Precision@10: 0.458
 Diversity: 0.672
 ```
 
-## 🐳 Docker Deployment
+##  Docker Deployment
 
 ### Build Image
 
@@ -281,7 +281,7 @@ docker run -p 8000:8000 \
 docker-compose up -d
 ```
 
-## 📝 Configuration
+##  Configuration
 
 Edit `configs/api.yaml` for API settings:
 
@@ -306,7 +306,7 @@ logging:
   file: logs/api.log
 ```
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 # Run all tests
@@ -319,7 +319,7 @@ pytest tests/test_api.py::test_recommend -v
 pytest tests/ --cov=. --cov-report=html
 ```
 
-## 🚀 Performance
+##  Performance
 
 - **Embedding Generation**: ~1ms per sample
 - **Vector Search**: ~10ms for 1M movies (FAISS)
@@ -336,7 +336,7 @@ pytest tests/ --cov=. --cov-report=html
 - [ ] Graph neural networks for collaborative filtering
 - [ ] Online learning with user feedback
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions welcome! Please:
 
@@ -346,17 +346,14 @@ Contributions welcome! Please:
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see LICENSE file for details.
 
-## 📞 Support
+##  Support
 
 For issues and questions:
 - Open an issue on GitHub
 - Check existing discussions
 - Review documentation in `/docs`
 
----
-
-**Built with ❤️ using PyTorch & LLMs**
