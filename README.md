@@ -326,7 +326,7 @@ pytest tests/ --cov=. --cov-report=html
 - **Full Pipeline**: ~50ms per recommendation request
 - **Throughput**: 100+ req/s per instance
 
-## 📈 Future Enhancements
+##  Future Enhancements
 
 - [ ] Multi-modal embeddings (text + images)
 - [ ] Real-time user preference updates
